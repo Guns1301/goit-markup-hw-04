@@ -137,6 +137,8 @@ h3 {
 }
 
 .contact-link {
+  display: inline-flex;
+  align-items: center;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -144,19 +146,38 @@ h3 {
   color: var(--main-color);
   text-decoration: none;
 }
-.phone.contact-link {
-  /* background-color: blue; */
+.header-phone .header-mail {
   display: inline-flex;
+  align-items: center;
+}
 
-  background-image: url(../images/phone.svg);
-
-  background-repeat: no-repeat;
-  background-position: center;
+.icon-mail {
   margin-right: 10px;
-  background-size: contain;
-  width: 44px;
-  height: 44px;
-  color: var(--icon-color);
+  width: 16px;
+  height: 11px;
+  fill: currentColor;
+}
+
+.icon-phone { 
+  margin-right: 10px;
+  width: 16px;
+  height: 11px;
+  /* fill: currentColor; */
+}
+.contact-link:hover .icon-mail,
+.icon-phone {
+  color: var(--accent-color);
+}
+
+.contact-link {
+  color: #757575;
+  fill: #757575;
+}
+
+.contact-link:focus,
+.contact-link:hover {
+  color: #2196f3;
+  fill: #2196f3;
 }
 
 .contact-us .item + .item {
@@ -411,7 +432,7 @@ h3 {
   margin-right: 0;
 }
 
-/* спмсок соц сетей */
+/* список соц сетей */
 
 .social-list {
   display: flex;
@@ -447,39 +468,36 @@ h3 {
   color: var(--icon-color);
 }
 
-.social-link:hover {
-  background: var(--accent-color);
+.social-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+.social-link:hover,
+.social-link:focus {
+  color: var(--white-color);
+  background-color: var(--accent-color);
   /* color: var(--white-color); */
 }
 
-.social-link:hover .social-icon {
+.social-link:hover {
   fill: var(--white-color);
+  fill: var(--accent-color);
 }
 
 /* clients */
+/* Постоянные клиенты */
 
-.clients-list {
+.clients .list {
   display: flex;
-  align-items: center;
 }
 
-.clients-item {
+.clients .item {
   display: flex;
-  justify-content: center;
-  width: 170px;
-  height: 90px;
-  align-items: center;
-  min-height: 90px;
-  /* background-color: gray; */
-  /* border: 1px solid #afb1b8; */
-  /* border-radius: 4px; */
-}
-
-.clients-item:not(:last-child) {
   margin-right: 30px;
 }
 
-.clients-icon {
+.client-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -489,6 +507,32 @@ h3 {
   border: 1px solid #afb1b8;
   color: var(--icon-color);
 }
+
+.client-link:hover,
+.client-link:focus {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.client-link-logo {
+  fill: currentColor;
+}
+.clients-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Portfolio */
 
@@ -526,6 +570,8 @@ h3 {
 .btn:hover {
   background: var(--accent-color);
   color: var(--white-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 a {
@@ -537,11 +583,10 @@ a {
 .flex-container {
   display: flex;
   flex-wrap: wrap;
+
   /* margin: -15px; */
   /* outline-color: rgb(80, 47, 80); */
   /* background-color: seagreen; */
-  /* box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 
-    0px 1px 1px rgba(0, 0, 0, 0.12);*/
 }
 
 .container-element {
@@ -551,6 +596,7 @@ a {
   /* margin-right: 30px; */
   margin-bottom: 30px;
   border: 1px solid #eeeeee;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .container-element:nth-child(3n + 0) {
@@ -562,20 +608,21 @@ a {
   text-decoration: none;
 }
 
-.description {
+.description { border-top: none;
+  box-sizing: inherit;
   padding: 0;
-  /* background-color: lightgreen; */
-  /* padding: 24px 20px; */
-  /* width: 370px; */
-  /* border-right: 1px solid #eeeeee; 
+  /*padding: 24px 20px;
+ 
+  border-right: 1px solid #eeeeee; 
   border-left: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;*/
-  border-top: none;
-  box-sizing: inherit;
+ 
+  
 }
 
 .portfolio-title {
-  margin-top: 0px;
+  margin-top: 20px;
+  margin-left: 24px;
   margin-bottom: 4px;
   font-weight: bold;
   font-size: 36px;
@@ -592,7 +639,8 @@ a {
 }
 
 .list-description {
-  margin: 0;
+  margin-left: 24px;
+  margin-bottom: 20px;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.03em;
@@ -681,35 +729,6 @@ a {
   text-decoration: none;
 }
 
-/* .contacts-item.mail::before { 
-  content: '';
-  display: inline-flex;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  background-color: turquoise;
-  background-image: url(../images/mail.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 40px;
-  background-size: contain;
-}
-.contacts-item.phone::before {
-  content: '';
-  display: inline-flex;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  background-color: hotpink;
-  background-image: url(../images/phone.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 40px;
-  background-size: contain;
-}
-
-*/
-
 /* join */
 .join-menu {
   display: block;
@@ -729,3 +748,172 @@ a {
   text-transform: uppercase;
   color: #ffffff;
 }
+.footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--white-color);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.footer-link:hover, 
+.footer-link:focus {
+  background-color: var(--accent-color);
+}
+.footer-link-logo {
+  width: 20px;
+  height: 20px;
+  fill: var(--white-color);
+}
+
+
+
+
+
+
+
+
+
+
+/* Оформление portfolio.html 
+
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portfolio .title {
+  margin: 0;
+}
+
+.portfolio-list-item {
+  width: calc((100% - 60px) / 3);
+  margin-right: 30px;
+  margin-bottom: 30px;
+
+  background-color: #ffffff;
+}
+
+.portfolio-list-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.portfolio-list-item:nth-last-child(-n + 3) {
+  margin-bottom: 94px;
+}
+
+.portfolio-list-item:hover {
+  box-sizing: border-box;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.portfolio-list .link {
+  display: inline-block;
+}
+
+.portfolio .img {
+  display: block;
+}
+
+.portfolio-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-heading {
+  padding: 20px 24px;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.portfolio-title {
+  margin-top: 0;
+  margin-bottom: 4px;
+
+  color: var(--title-color);
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.portfolio-list-item:hover .portfolio-text {
+  transform: translateY(0);
+}
+
+.portfolio-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  padding: 63px 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--primary-white-color);
+
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-text p {
+  margin: 0;
+}
+
+.portfolio-directions {
+  color: var(--primary-text-color);
+
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.87;
+}
+/* Фильтр портфолио 
+
+.filter {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 0;
+  margin-bottom: 56px;
+}
+
+.filter-nav + .filter-nav {
+  margin-left: 8px;
+}
+
+.filter-btn {
+  padding: 6px 22px;
+  min-width: 73px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+
+  color: var(--title-color);
+  background-color: var(--portfolio-button-color);
+
+  font-family: roboto, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  text-align: center;
+}
+
+.filter-btn:hover,
+.filter-btn:focus {
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+*/
