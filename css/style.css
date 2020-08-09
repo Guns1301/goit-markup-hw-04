@@ -160,8 +160,8 @@ h3 {
 
 .icon-phone { 
   margin-right: 10px;
-  width: 16px;
-  height: 11px;
+  width: 11px;
+  height: 16px;
   /* fill: currentColor; */
 }
 .contact-link:hover .icon-mail,
@@ -596,8 +596,13 @@ a {
   /* margin-right: 30px; */
   margin-bottom: 30px;
   border: 1px solid #eeeeee;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
+
+.container-element:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 
 .container-element:nth-child(3n + 0) {
   margin-right: 0;
